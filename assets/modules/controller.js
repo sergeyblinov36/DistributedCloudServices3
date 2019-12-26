@@ -79,8 +79,8 @@ module.exports = {
             .connect(tvGuide.url, tvGuide.options)
             .then(async () => {
                 const id = req.params;
-                console.log(tvGuide.ts.count());
-                const response = await tvGuide.ts.deleteOne({ id });
+                console.log(id);
+                const response = await tvGuide.ts.deleteOne( id );
 
                 if (response.deletedCount !== 0) {
                     res.json(response);
